@@ -53,7 +53,7 @@ module OpenSRS
 
         element.children.each do |item|
           next if item.content.strip.empty?
-          dt_array[item.attributes["key"].value.to_i] = decode_data(item.children)
+          dt_array[item.attributes["key"].to_i] = decode_data(item.children)
         end
 
         return dt_array
@@ -64,7 +64,7 @@ module OpenSRS
 
         element.children.each do |item|
           next if item.content.strip.empty?
-          dt_assoc[item.attributes["key"].value] = decode_data(item.children)
+          dt_assoc[item.attributes["key"]] = decode_data(item.children)
         end
 
         return dt_assoc
